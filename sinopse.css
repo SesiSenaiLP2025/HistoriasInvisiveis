@@ -1,0 +1,274 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fef3d6;
+}
+
+.carrossel {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Ajuste a altura conforme necessário */
+	max-height:1600px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.botoes {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.botao {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.indicadores {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.indicador {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: gray;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ativo {
+    background-color: black;
+}
+
+main {
+    background-color: #fff;
+    margin: 30px 10%;
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #6f340d;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 41px;
+    margin-right: 10px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.nav a {
+    margin-left: 48px;
+    margin-right: 48px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.nav a i {
+    margin-right: 5px;
+}
+
+/* From Uiverse.io by SteveBloX */ 
+.card {
+    margin-left: 10%;
+    margin-top: 3%;
+    box-sizing: border-box;
+    width: 80%;
+    background: #fff;
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    cursor: pointer;
+    transition: all 0.5s;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+  }
+  
+  .card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+  }
+  
+  .card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
+  .title{
+    text-align: center;
+  }
+p{
+    text-align: justify;
+    margin-left: 25%;
+    margin-right: 29%;
+}
+
+ .nospace {
+    background-color: #6f340d;
+    padding: 31px;
+    margin-top: 21%;
+
+ }
+ .img{
+    width: 17%;
+    margin-right: 9%;
+    margin-left: 10%;
+ }
+ .titulo-resenha{
+    text-align: center;
+ }
+ .cinco-estrelas{
+    width: 7%;
+    margin-right: auto;
+    margin-left: auto;
+ }
+ .um{
+    float: right;
+    margin-right: 47%;
+    margin-top: -23%;
+    display: block;
+ }
+ .dois{
+    float: right;
+    margin-right: 53.9%;
+    margin-top: -21%;
+    display: block;
+ }
+ .tres{
+    float: right;
+    margin-right: 54.3%;
+    margin-top: -19%;
+    display: block;
+ }
+.inform{
+    text-align: justify;
+}
+
+#resenha{
+    margin-left: 34%;
+    margin-right: 12%;
+    margin-top: -17%;
+}
+
+table {
+    margin-left: 10%;
+    border-collapse: collapse; 
+    border: 1px solid black; 
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+h1{
+    margin-left: 25%;
+}
+.fotos{
+    display: flex;
+    justify-content: center;
+    width: 1296px;
+    height: 436px;
+    object-fit: cover;
+    gap: 14%
+}
+.fotos img {
+    width: 420px;
+    height: 436px;
+    object-fit: cover;
+    margin: 0 10px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.fotos img:hover {
+    transform: rotate(5deg); /* Gira 5 graus */
+}
+
+.rodape {
+    background-color: #5c2e0e; /* marrom escuro */
+    color: #fff;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .rodape1 {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .sobrenos {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .lista_links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .lista_links li {
+    margin-bottom: 10px;
+  }
+  
+  .lista_a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .lista_a:hover {
+    color: #ffcc00; /* amarelo no hover */
+  }
+.lista_a{
+    text-decoration: none;
+}

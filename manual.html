@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>HISTÓRIAS INVISÍVEIS</title>
+		<link rel="stylesheet" type="text/css" href="manual2.css">
+        <link rel="icon" type="image/png" href="icone.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+             .container {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 22px;
+        }
+        .info {
+            text-align: left;
+            margin-top: 15px;
+        }
+        .info p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        </style>
+        <style>
+
+			
+			.container{
+                width: 50%;
+                padding: 38px;
+                border: 2px, solid #ccc;
+                border-radius: 31px;
+                margin-left: auto;
+                margin-right: auto;
+			}
+			
+			.item{
+				padding:10px;
+				margin: 5px;
+				border: 1px, solid #ddd;
+				border-radius: 3px;
+				cursor: grab;
+			}
+			
+			.item.dragging{
+				opacity: 0.5;
+			}
+			
+			.container.dragzone{
+				background-color:#000;
+			}
+		</style>
+        <style>
+        .alto-contraste{
+            background-color: black;
+            color: #e6ea00;
+        }
+        button{
+            padding:10px 15px;
+            cursor:pointer;
+            background-color:#fef3d6;
+            color:black;
+            border:1px solid #000000;
+        }
+        .modo-leitura{
+            line-height:1.8;
+            background-color:#f4f4f4;
+            color:#333;
+        }
+        .aumentar-fonte{
+            font-size:1.2em;
+        }
+        .diminuir-fonte{
+            font-size:1em;
+        }
+        :focus{
+            outline:3px solid #fef3d6;
+        }
+    </style>
+	</head>
+	<body>
+        
+        
+        <div class="header" >
+			<div class="logo">
+				<img src="logo1.png">
+			</div>
+			<div class="nav">
+				<a href="Onde_estamos.html" id="p1">Onde estamos?</a>
+				<button id="contraste-btn" aria-label="Alterar Contraste">Alto Contraste</button>
+		        <button id="modo-leitura-btn" aria-label="Modo Leitura">Modo Leitura</button>
+		        <button id="aumentar-fonte-btn" aria-label="Aumentar Fonte">A+</button>
+		        <button id="diminuir-fonte-btn" aria-label="Diminuir Fonte">A-</button>
+		        <button id="ler-conteudo-btn" aria-label="Ler Conteúdo">Ler Conteúdo</button>
+                <button onclick="mudarIdioma('en')">English</button>
+                <button onclick="mudarIdioma('pt')">Português</button>
+			</div>
+		</div>
+		<main>
+			<div class="carrossel">
+        <div class="slides">
+            <div class="slide"><img src="imagem1.webp"></div>
+            <div class="slide"><img src="imagem2.JPG"></div>
+            <div class="slide"><img src="imagem3.jpg"></div>
+            <div class="slide"><img src="imagem5.png"></div>
+        </div>
+        <div class="botoes">
+            <button class="botao" id="anterior">&#10094;</button>
+            <button class="botao" id="proximo">&#10095;</button>
+        </div>
+        </div>
+        <div class="indicadores"></div>
+
+        <br/><br/><br/>
+		</main>
+        
+        <div class="card">
+            <h3 class="title" id="p7">Conteúdo</h3>
+          <p id="p8">O Pequeno Manual Antirracista, de Djamila Ribeiro, aborda o racismo como uma estrutura profundamente enraizada na sociedade, que vai além de atitudes individuais e se manifesta nas instituições. O livro explora conceitos como racismo estrutural, privilégio branco, consciência racial, lugar de fala e ações antirracistas, propondo uma reflexão sobre como transformar esse sistema.
+        , exacerbada pela falta de políticas de reparação após a abolição. Isso afeta a educação, o mercado de trabalho e a segurança pública, com a população negra sendo a principal vítima de violência e discriminação. O privilégio branco, muitas vezes invisível para quem o possui, é destacado como um fator que favorece pessoas brancas, que não enfrentam os mesmos desafios raciais que as pessoas negras.
+        A consciência racial é essencial, pois o mito da democracia racial obscureceu o racismo, fazendo com que muitos negros não reconhecessem sua identidade e se conformassem com padrões brancos. O fortalecimento da identidade negra passa pela valorização da cultura afro-brasileira e a resistência ao apagamento da história.
+        O conceito de lugar de fala é explicado como o reconhecimento de que quem sofre uma opressão tem mais propriedade para falar sobre ela, sem excluir o envolvimento de pessoas brancas, mas com a necessidade de respeitar as experiências e perspectivas de quem vive o racismo.
+        O livro conclui que ser antirracista exige ação concreta: estudar sobre o racismo, intervir em situações discriminatórias e apoiar a cultura negra são passos importantes. Ribeiro enfatiza que o combate ao racismo requer mudanças reais, não apenas boas intenções, e que cada indivíduo tem a responsabilidade de contribuir para uma sociedade mais justa e igualitária.
+             </p>
+        </div>
+        <div class="card">
+            <h3 class="title" id="p9">Sobre o livro</h3>
+            <p id="p10">O Pequeno Manual Antirracista, de Djamila Ribeiro, explica o racismo como uma estrutura que perpetua desigualdades em diversas áreas da sociedade. A autora discute o racismo estrutural, o privilégio branco e a importância da consciência racial, mostrando como a cultura negra foi historicamente apagada no Brasil. Ela também destaca o conceito de lugar de fala, defendendo que as experiências das pessoas negras devem ser priorizadas no debate sobre racismo. Por fim, o livro reforça que ser antirracista exige ação contínua, incentivando o combate ativo às injustiças e o compromisso coletivo para mudanças estruturais.
+            </p>
+        </div>
+        <div class="card">
+            <h3 class="title" id="p11">Biografia da autora</h3>
+            <p id="p12">Djamila Ribeiro é uma filósofa, escritora e ativista brasileira, referência no debate sobre racismo, feminismo negro e consciência racial. Formada em Filosofia pela Unifesp, publicou obras como *Pequeno Manual Antirracista* e *O que é Lugar de Fala?*, tornando conceitos acadêmicos mais acessíveis. Além da escrita, atua na educação antirracista e políticas públicas, fundando a editora Sueli Carneiro para fortalecer vozes negras. Reconhecida internacionalmente, recebeu prêmios como o Príncipe Claus e foi listada entre as 100 pessoas mais influentes pela BBC e *Time Magazine*. Seu trabalho inspira a luta por equidade racial no Brasil e no mundo.</p>
+        </div><br/><br/>
+
+        <div class="resenha">
+            <div>
+                <h2 class="titulo-resenha" id="p13">Resenha: Pequeno Manual Antirracista</h2>
+                <img class="cinco-estrelas" src="cinco-estrelas.png">
+                <img class="img" src="pequeno-manual-antirracista.jpg">
+            </div>
+            <div class="inform">
+                <h4 class="um" id="p14">TÍTULO: Pequeno Manual Antirracista</h4>
+                <h4 class="dois" id="p15">AUTOR: Djamila Ribeiro</h4>
+                <h4 class="tres" id="p16">PÁGINAS: 136 páginas</h4>
+            </div>
+           
+            <p id="resenha" >O Pequeno Manual Antirracista, da filósofa e escritora brasileira Djamila Ribeiro, é uma obra concisa e direta que oferece um guia acessível para compreender e enfrentar o racismo estrutural. Com uma linguagem clara e didática, o livro apresenta 11 capítulos curtos, cada um abordando um aspecto essencial da luta antirracista, como consciência racial, privilégio branco, negritude, violência racial, entre outros.  
+                Dessa forma, Djamila parte de sua experiência pessoal e do referencial teórico de pensadores negros para explicar como o racismo opera na sociedade e como cada indivíduo pode agir para combatê-lo. A autora enfatiza a importância da educação e da escuta ativa para desconstruir preconceitos e agir de maneira antirracista no cotidiano.  
+                O livro se destaca também por ser acessível, tanto para quem está começando a refletir sobre o tema, quanto para aqueles que já têm um conhecimento prévio e desejam aprofundar suas práticas antirracistas. Além disso, a abordagem objetiva e prática faz dele uma leitura indispensável para todos que querem construir uma sociedade mais justa e igualitária.  
+                Mais do que uma simples introdução ao tema, Pequeno Manual Antirracista é um convite à reflexão e à ação no dia a dia. Djamila Ribeiro entrega um guia essencial para quem deseja não apenas entender o racismo, mas também combatê-lo de maneira ativa e contínua, sendo uma leitura breve, mas extremamente impactante e necessária nos tempos atuais.</p>
+        </div>
+        <br/><br/>
+        
+        <div class="tabela">
+            <a href="sinopse.html" id="p17">Sinopse</a>
+            <a href="videos.html" id="p18">Vídeos</a>
+            <a href="https://cogetes.epsjv.fiocruz.br/storage/ANEXO_SOCIOLOGIA_2%C2%BAANO_PEQUENO_MANUAL_ANTIRRACISTA_RIBEIRO_DJAMILA-v_5f0659881d9e4.pdf">Livro PDF</a>
+        </div>
+        <br/><br/><br/><br>
+
+        <div class="container">
+            <h1 id="p19">Pequeno Manual Antirracista</h1>
+            <div class="info">
+                <p id="p20">Gênero textual: Ensaio</p>
+                <p id="p21">Tipo de linguagem: Simples, acessível e direta.</p>
+                <p id="p22">Assunto: Racismo estrutural, desigualdade racial, conscientização e combate ao racismo.</p>
+                <p id="p23">Público leitor: Público geral, especialmente jovens, estudantes e educadores.</p>
+            </div>
+        </div>
+
+       <div class="cards">
+            <div class="card1">
+                <h2 id="p24">Ações Antirracistas</h2>
+                <p id="card1p">Eduque-se, escute, apoie e promova a igualdade racial. Pequenas ações geram grandes mudanças.</p>
+                <a href="https://ibdfam.org.br/noticias/8288/" target="_blank" class="btn" id="p25">Saiba Mais</a>
+            </div>
+            <div class="card1">
+                <h2 id="p26">"Pequeno Manual Antirracista" no Vestibular</h2>
+                <p id="card2p">A obra de Djamila Ribeiro é frequentemente abordada em vestibulares para discutir racismo estrutural e consciência social.</p>
+                <a href="https://www.pensarcursos.com.br/blog/literatura-manual-antirracista/" target="_blank" class="btn" id="p27">Saiba Mais</a>
+            </div>
+       </div>
+
+        <div id="container1" class="container">
+            <p style="text-align: center;" id="p28">Arraste para o campo, palavras referentes ao livro!</p>
+            <div class="item" draggable="true" id="p29">Racismo Estrutural</div>
+            <div class="item" draggable="true" id="p30">Djamila Ribeiro</div>
+            <div class="item" draggable="true" id="p31">Inversão racial</div>
+            <div class="item" draggable="true" id="p32">Negros se autodiscriminam</div>
+            <div class="item" draggable="true" id="p33">Vitimismo</div>
+            <div class="item" draggable="true" id="p34">Desigualdade</div>
+            <div class="item" draggable="true" id="p35">Somos uma democracia racial</div>
+            <div class="item" draggable="true" id="p36">Privilégio branco</div>
+            
+        </div>
+        <br/><br/><br/>
+        <div style="color: black; background-color: #adff87;" id="container2" class="container">Corretas</div><br/><br/>
+        <div style="color: black; background-color: #ff6246;" id="container3" class="container">Erradas</div>
+        <br/><br/>
+        <script>
+            const itens = document.querySelectorAll('.item');
+            const containers = document.querySelectorAll('.container');
+            const containerInicial = document.getElementById('container1');
+            const containerErradas = document.getElementById('container3');
+        
+            const itensCorretos = [
+                "Racismo Estrutural",
+                "Djamila Ribeiro",
+                "Desigualdade",
+                "Privilégio branco"
+            ];
+        
+            itens.forEach(item => {
+                item.addEventListener('dragstart', dragStart);
+                item.addEventListener('dragend', dragEnd);
+            });
+        
+            containers.forEach(container => {
+                container.addEventListener('dragover', dragOver);
+                container.addEventListener('drop', dragDrop);
+            });
+        
+            function dragStart(e) {
+                e.target.classList.add('dragging');
+                e.dataTransfer.setData('text/plain', e.target.innerText);
+            }
+        
+            function dragEnd(e) {
+                e.target.classList.remove('dragging');
+            }
+        
+            function dragOver(e) {
+                e.preventDefault();
+            }
+        
+            function dragDrop(e) {
+                e.preventDefault();
+                const data = e.dataTransfer.getData('text/plain');
+                const itemOriginal = document.querySelector(`.item.dragging`);
+        
+                if (!itemOriginal) return;
+        
+                itemOriginal.remove(); // Remove do container original
+        
+                if (e.target.id === 'container2' && itensCorretos.includes(data)) {
+                    adicionarItem(e.target, data);
+                } else if (e.target.id === 'container3' && !itensCorretos.includes(data)) {
+                    adicionarItem(e.target, data);
+                } else {
+                    adicionarItem(containerInicial, data); // Se o local não for permitido, volta para container1
+                }
+            }
+        
+            function adicionarItem(container, texto) {
+                if (![...container.children].some(item => item.innerText === texto)) {
+                    const novoItem = document.createElement('div');
+                    novoItem.className = "item";
+                    novoItem.draggable = true;
+                    novoItem.innerText = texto;
+                    container.appendChild(novoItem);
+                    novoItem.addEventListener('dragstart', dragStart);
+                    novoItem.addEventListener('dragend', dragEnd);
+                }
+            }
+        </script>        
+        
+        <div class="rodape">
+            <div class="rodape1">
+              <h3 class="sobrenos">Sobre Nós</h3>
+              <ul class="lista_links">
+                <li>
+                  <a class="lista_a" href="quem_somos.html">
+                    <i class="fa-solid fa-user"></i> Quem Somos
+                  </a>
+                </li>
+                <li>
+                  <a class="lista_a" href="contato.html">
+                    <i class="fa-solid fa-phone"></i> Contato
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+	</body>
+    <script>
+		const traducoes = {
+			"pt":{
+				"p1": "Onde estamos??",
+				"contraste-btn":"Alto Contraste",
+                "modo-leitura-btn":"Modo Leitura",
+                "aumentar-fonte-btn":"A+",
+                "diminuir-fonte-btn":"A-",
+                "ler-conteudo-btn":"Ler Conteúdo",
+                "p7":"Conteúdo",
+                "p8":"O Pequeno Manual Antirracista, de Djamila Ribeiro, aborda o racismo como uma estrutura profundamente enraizada na sociedade, que vai além de atitudes individuais e se manifesta nas instituições. O livro explora conceitos como racismo estrutural, privilégio branco, consciência racial, lugar de fala e ações antirracistas, propondo uma reflexão sobre como transformar esse sistema., exacerbada pela falta de políticas de reparação após a abolição. Isso afeta a educação, o mercado de trabalho e a segurança pública, com a população negra sendo a principal vítima de violência e discriminação. O privilégio branco, muitas vezes invisível para quem o possui, é destacado como um fator que favorece pessoas brancas, que não enfrentam os mesmos desafios raciais que as pessoas negras. A consciência racial é essencial, pois o mito da democracia racial obscureceu o racismo, fazendo com que muitos negros não reconhecessem sua identidade e se conformassem com padrões brancos. O fortalecimento da identidade negra passa pela valorização da cultura afro-brasileira e a resistência ao apagamento da história. O conceito de lugar de fala é explicado como o reconhecimento de que quem sofre uma opressão tem mais propriedade para falar sobre ela, sem excluir o envolvimento de pessoas brancas, mas com a necessidade de respeitar as experiências e perspectivas de quem vive o racismo.O livro conclui que ser antirracista exige ação concreta: estudar sobre o racismo, intervir em situações discriminatórias e apoiar a cultura negra são passos importantes. Ribeiro enfatiza que o combate ao racismo requer mudanças reais, não apenas boas intenções, e que cada indivíduo tem a responsabilidade de contribuir para uma sociedade mais justa e igualitária.",
+                "p9":"Sobre o livro",
+                "p10":"O Pequeno Manual Antirracista, de Djamila Ribeiro, explica o racismo como uma estrutura que perpetua desigualdades em diversas áreas da sociedade. A autora discute o racismo estrutural, o privilégio branco e a importância da consciência racial, mostrando como a cultura negra foi historicamente apagada no Brasil. Ela também destaca o conceito de lugar de fala, defendendo que as experiências das pessoas negras devem ser priorizadas no debate sobre racismo. Por fim, o livro reforça que ser antirracista exige ação contínua, incentivando o combate ativo às injustiças e o compromisso coletivo para mudanças estruturais.",
+                "p11":"Biografia da autora",
+                "p12":"Djamila Ribeiro é uma filósofa, escritora e ativista brasileira, referência no debate sobre racismo, feminismo negro e consciência racial. Formada em Filosofia pela Unifesp, publicou obras como *Pequeno Manual Antirracista* e *O que é Lugar de Fala?*, tornando conceitos acadêmicos mais acessíveis. Além da escrita, atua na educação antirracista e políticas públicas, fundando a editora Sueli Carneiro para fortalecer vozes negras. Reconhecida internacionalmente, recebeu prêmios como o Príncipe Claus e foi listada entre as 100 pessoas mais influentes pela BBC e *Time Magazine*. Seu trabalho inspira a luta por equidade racial no Brasil e no mundo.",
+                "p13":"Resenha: Pequeno Manual Antirracista",
+                "p14":"TÍTULO: Pequeno Manual Antirracista",
+                "p15":"AUTOR: Djamila Ribeiro",
+                "p16":"PÁGINAS: 136 páginas",
+                "resenha":"O Pequeno Manual Antirracista, da filósofa e escritora brasileira Djamila Ribeiro, é uma obra concisa e direta que oferece um guia acessível para compreender e enfrentar o racismo estrutural. Com uma linguagem clara e didática, o livro apresenta 11 capítulos curtos, cada um abordando um aspecto essencial da luta antirracista, como consciência racial, privilégio branco, negritude, violência racial, entre outros.   Dessa forma, Djamila parte de sua experiência pessoal e do referencial teórico de pensadores negros para explicar como o racismo opera na sociedade e como cada indivíduo pode agir para combatê-lo. A autora enfatiza a importância da educação e da escuta ativa para desconstruir preconceitos e agir de maneira antirracista no cotidiano.   O livro se destaca também por ser acessível, tanto para quem está começando a refletir sobre o tema, quanto para aqueles que já têm um conhecimento prévio e desejam aprofundar suas práticas antirracistas. Além disso, a abordagem objetiva e prática faz dele uma leitura indispensável para todos que querem construir uma sociedade mais justa e igualitária.   Mais do que uma simples introdução ao tema, Pequeno Manual Antirracista é um convite à reflexão e à ação no dia a dia. Djamila Ribeiro entrega um guia essencial para quem deseja não apenas entender o racismo, mas também combatê-lo de maneira ativa e contínua, sendo uma leitura breve, mas extremamente impactante e necessária nos tempos atuais.",
+                "p17":"Sinopse",
+                "p18":"Vídeos",
+                "p19":"Pequeno Manual Antirracista",
+                "p20":"Gênero textual: Ensaio",
+                "p21":"Tipo de linguagem: Simples, acessível e direta.",
+                "p22":"Assunto: Racismo estrutural, desigualdade racial, conscientização e combate ao racismo.",
+                "p23":"Público leitor: Público geral, especialmente jovens, estudantes e educadores.",
+                "p24":"Ações Antirracistas",
+                "card1p":"",
+                "p25":"Saiba Mais",
+                "p26":"'Pequeno Manual Antirracista' no Vestibular",
+                "card2p":"A obra de Djamila Ribeiro é frequentemente abordada em vestibulares para discutir racismo estrutural e consciência social.",
+                "p27":"Saiba Mais",
+                "p28":"Arraste para o campo, palavras referentes ao livro!",
+                "p29":"Racismo Estrutural",
+                "p30":"Djamila Ribeiro",
+                "p31":"Inversão racial",
+                "p32":"Negros se autodiscriminam",
+                "p33":"Vitimismo",
+                "p34":"Desigualdade",
+                "p35":"Somos uma democracia racial",
+                "p36":"Privilégio branco"
+			},
+			"en":{
+                "p1":"Where are we??", 
+                "contraste-btn":"High Contrast",
+                "modo-leitura-btn":"Reading Mode",
+                "aumentar-fonte-btn":"A+",
+                "diminuir-fonte-btn":"A-",
+                "ler-conteudo-btn":"Read Content",
+                "p7":" Content",
+                "p8":"The Little Anti-Racist Manual, by Djamila Ribeiro, addresses racism as a deeply rooted structure in society that goes beyond individual attitudes and manifests in institutions. The book explores concepts such as structural racism, white privilege, racial awareness, place of speech, and anti-racist actions, proposing a reflection on how to transform this system, exacerbated by the lack of reparation policies after abolition. This affects education, the job market, and public safety, with the Black population being the main victim of violence and discrimination. White privilege, often invisible to those who possess it, is highlighted as a factor that favors white people, who do not face the same racial challenges as Black people. Racial awareness is essential, as the myth of racial democracy has obscured racism, causing many Black individuals to not recognize their identity and conform to white standards. Strengthening Black identity involves valuing Afro-Brazilian culture and resisting the erasure of history. The concept of place of speech is explained as the recognition that those who suffer oppression have more authority to speak about it, without excluding the involvement of white people, but with the need to respect the experiences and perspectives of those who live racism. The book concludes that being anti-racist requires concrete action: studying racism, intervening in discriminatory situations, and supporting Black culture are important steps. Ribeiro emphasizes that combating racism requires real changes, not just good intentions, and that each individual has the responsibility to contribute to a fairer and more equal society.",
+                "p9":"About the book",
+                "p10":"The Little Anti-Racist Manual, by Djamila Ribeiro, explains racism as a structure that perpetuates inequalities in various areas of society. The author discusses structural racism, white privilege, and the importance of racial awareness, showing how Black culture has been historically erased in Brazil. She also highlights the concept of place of speech, arguing that the experiences of Black people should be prioritized in the debate on racism. Finally, the book reinforces that being anti-racist requires continuous action, encouraging active combat against injustices and a collective commitment to structural changes.",
+                "p11":"Author's Biography",
+                "p12":"Djamila Ribeiro is a Brazilian philosopher, writer, and activist, a reference in the debate on racism, Black feminism, and racial awareness. She graduated in Philosophy from Unifesp and has published works such as Little Anti-Racist Manual and What is Place of Speech?, making academic concepts more accessible. In addition to writing, she works in anti-racist education and public policies, founding the Sueli Carneiro publishing house to strengthen Black voices. Recognized internationally, she has received awards such as the Príncipe Claus and has been listed among the 100 most influential people by the BBC and Time Magazine. Her work inspires the fight for racial equity in Brazil and around the world.",
+                "p13":"Review: Little Anti-Racist Manual",
+                "p14":" TITLE: Little Anti-Racist Manual",
+                "p15":"AUTHOR: Djamila Ribeiro",
+                "p16":" PAGES: 136 pages",
+                "resenha":"The Little Anti-Racist Handbook, by Brazilian philosopher and writer Djamila Ribeiro, is a concise and straightforward work that offers an accessible guide to understanding and confronting structural racism. Written in clear and didactic language, the book presents 11 short chapters, each addressing an essential aspect of the anti-racist struggle, such as racial consciousness, white privilege, blackness, racial violence, among others. In this way, Djamila draws on her personal experience and the theoretical framework of black thinkers to explain how racism operates in society and how each individual can act to combat it. The author emphasizes the importance of education and active listening to deconstruct prejudices and act in an anti-racist manner in everyday life. The book also stands out for being accessible, both for those who are beginning to reflect on the subject and for those who already have prior knowledge and wish to deepen their anti-racist practices. In addition, its objective and practical approach makes it essential reading for anyone who wants to build a more just and egalitarian society. More than just an introduction to the topic, Pequeno Manual Antirracista is an invitation to reflect and take action in everyday life. Djamila Ribeiro delivers an essential guide for those who want to not only understand racism, but also actively and continuously combat it. It is a short but extremely impactful and necessary read in the current times.",
+                "p17": "Synopsis",
+                "p18": "Videos",
+                "p19": "Little Anti-Racist Handbook",
+                "p20": "Text Genre: Essay",
+                "p21": "Type of Language: Simple, accessible, and direct.",
+                "p22": "Subject: Structural racism, racial inequality, awareness, and anti-racism efforts.",
+                "p23": "Target Audience: General public, especially young people, students, and educators.",
+                "p24": "Anti-Racist Actions",
+                "card1p": "",
+                "p25": "Learn More",
+                "p26": "'Little Anti-Racist Handbook' in College Entrance Exams",
+                "card2p": "Djamila Ribeiro's work is often featured in entrance exams to discuss structural racism and social awareness.",
+                "p27": "Learn More",
+                "p28": "Drag words related to the book into the field!",
+                "p29": "Structural Racism",
+                "p30": "Djamila Ribeiro",
+                "p31": "Racial inversion",
+                "p32": "Black people self-discriminate",
+                "p33": "Victimism",
+                "p34": "Inequality",
+                "p35": "We are a racial democracy",
+                "p36": "White privilege"
+			}
+		};
+
+		function mudarIdioma(idioma){
+			document.getElementById("p1").innerText = traducoes[idioma].p1;
+			document.getElementById("contraste-btn").innerText = traducoes[idioma]["contraste-btn"];
+            document.getElementById("modo-leitura-btn").innerText = traducoes[idioma]["modo-leitura-btn"];
+			document.getElementById("aumentar-fonte-btn").innerText = traducoes[idioma]["aumentar-fonte-btn"];
+            document.getElementById("diminuir-fonte-btn").innerText = traducoes[idioma]["diminuir-fonte-btn"];
+			document.getElementById("ler-conteudo-btn").innerText = traducoes[idioma]["ler-conteudo-btn"];
+            document.getElementById("p7").innerText = traducoes[idioma].p7;
+			document.getElementById("p8").innerText = traducoes[idioma].p8;
+            document.getElementById("p9").innerText = traducoes[idioma].p9;
+			document.getElementById("p10").innerText = traducoes[idioma].p10;
+            document.getElementById("p11").innerText = traducoes[idioma].p11;
+			document.getElementById("p12").innerText = traducoes[idioma].p12;
+            document.getElementById("p13").innerText = traducoes[idioma].p13;
+			document.getElementById("p14").innerText = traducoes[idioma].p14;
+            document.getElementById("p15").innerText = traducoes[idioma].p15;
+			document.getElementById("p16").innerText = traducoes[idioma].p16;
+            document.getElementById("p17").innerText = traducoes[idioma].p17;
+			document.getElementById("resenha").innerText = traducoes[idioma].resenha;
+            document.getElementById("p18").innerText = traducoes[idioma].p18;
+			document.getElementById("p19").innerText = traducoes[idioma].p19;
+            document.getElementById("p20").innerText = traducoes[idioma].p20;
+			document.getElementById("p21").innerText = traducoes[idioma].p21;
+            document.getElementById("p22").innerText = traducoes[idioma].p22;
+			document.getElementById("p23").innerText = traducoes[idioma].p23;
+            document.getElementById("p24").innerText = traducoes[idioma].p24;
+			document.getElementById("card1p").innerText = traducoes[idioma].card1p;
+            document.getElementById("p25").innerText = traducoes[idioma].p25;
+			document.getElementById("p26").innerText = traducoes[idioma].p26;
+            document.getElementById("card2p").innerText = traducoes[idioma].card2p;
+			document.getElementById("p27").innerText = traducoes[idioma].p27;
+            document.getElementById("p28").innerText = traducoes[idioma].p28;
+            document.getElementById("p29").innerText = traducoes[idioma].p29;
+            document.getElementById("p30").innerText = traducoes[idioma].p30;
+            document.getElementById("p31").innerText = traducoes[idioma].p31;
+            document.getElementById("p31").innerText = traducoes[idioma].p32;
+            document.getElementById("p33").innerText = traducoes[idioma].p33;
+            document.getElementById("p34").innerText = traducoes[idioma].p34;
+            document.getElementById("p35").innerText = traducoes[idioma].p35;
+            document.getElementById("p36").innerText = traducoes[idioma].p36;
+		}
+	</script>    
+
+    <script>
+        //alterar o contraste
+        document.getElementById('contraste-btn').addEventListener('click', function(){
+            document.body.classList.toggle('alto-contraste');
+            cards = document.getElementsByClassName('card');
+            for(let card of cards){
+                if(card.style.backgroundColor == ''){
+                    card.style.backgroundColor = "rgb(0, 0, 0)";
+                    card.style.color = "yellow";
+                }
+                else if(card.style.backgroundColor == 'rgb(0, 0, 0)'){
+                    card.style.backgroundColor = "rgb(255, 255, 255)";
+                    card.style.color = "black";
+                }
+                else if(card.style.backgroundColor == 'rgb(255, 255, 255)'){
+                    card.style.backgroundColor = "rgb(0, 0, 0)";
+                    card.style.color = "yellow";
+                }
+            }
+
+            cards = document.getElementsByClassName('card1');
+            for(let card1 of cards){
+                if(card1.style.backgroundColor == ''){
+                    card1.style.backgroundColor = "rgb(0, 0, 0)";
+                    card1.style.color = "yellow";
+                    document.getElementById('card1p').style.color = "yellow !important";
+                }
+                else if(card1.style.backgroundColor == 'rgb(0, 0, 0)'){
+                    card1.style.backgroundColor = "rgb(255, 255, 255)";
+                    card1.style.color = "black";
+                }
+                else if(card1.style.backgroundColor == 'rgb(255, 255, 255)'){
+                    card1.style.backgroundColor = "rgb(0, 0, 0)";
+                    card1.style.color = "yellow";
+                }
+            }
+            cards = document.getElementsByClassName('container');
+            for(let inform of cards){
+                if(inform.style.backgroundColor == ''){
+                    inform.style.backgroundColor = "rgb(0, 0, 0)";
+                    inform.style.color = "yellow";
+                }
+                else if(inform.style.backgroundColor == 'rgb(0, 0, 0)'){
+                    inform.style.backgroundColor = "rgb(255, 255, 255)";
+                    inform.style.color = "black";
+                }
+                else if(inform.style.backgroundColor == 'rgb(255, 255, 255)'){
+                    inform.style.backgroundColor = "rgb(0, 0, 0)";
+                    inform.style.color = "yellow";
+                }
+            }
+
+            
+        });
+    
+        //Modo leitura
+        document.getElementById('modo-leitura-btn').addEventListener('click', function(){document.body.classList.toggle('modo-leitura')});
+        
+        //Aumentar fonte
+        document.getElementById('aumentar-fonte-btn').addEventListener('click', function()
+        {document.body.classList.add('aumentar-fonte');
+        document.body.classList.remove('diminuir-fonte');
+        });
+        
+        //diminuir fonte
+        document.getElementById('diminuir-fonte-btn').addEventListener('click', function()
+        {document.body.classList.add('diminuir-fonte');
+        document.body.classList.remove('aumentar-fonte');
+        });
+        
+        
+        //ler conteudo da pagina
+        document.getElementById('ler-conteudo-btn').addEventListener('click', function(){
+            const texto = document.body.innerText;
+            const falante = new SpeechSynthesisUtterance(texto);
+            falante.lang = 'pt-BR';
+            falante.volume = 1;
+            falante.rate = 4;
+            falante.pitch = 1;
+            speechSynthesis.speak(falante);
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+    let slideAtual = 0;
+    let intervalo;
+
+    const btnAnterior = document.getElementById("anterior");
+    const btnProximo = document.getElementById("proximo");
+
+    function mostrarSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? "block" : "none";
+        });
+    }
+
+    function mudarSlide(direcao) {
+        slideAtual = (slideAtual + direcao + totalSlides) % totalSlides;
+        mostrarSlide(slideAtual);
+        reiniciarAutoPlay();
+    }
+
+    function autoPlay() {
+        intervalo = setInterval(() => mudarSlide(1), 3000); // Troca a cada 3 segundos
+    }
+
+    function reiniciarAutoPlay() {
+        clearInterval(intervalo);
+        autoPlay();
+    }
+
+    btnAnterior.addEventListener("click", () => mudarSlide(-1));
+    btnProximo.addEventListener("click", () => mudarSlide(1));
+
+    // Inicia o carrossel
+    mostrarSlide(slideAtual);
+    autoPlay();
+});
+
+    </script>
+
+
+   <!--<script>
+    
+	 let indiceAtual = 0;
+        const slides = document.querySelectorAll(".slide");
+        const totalSlides = slides.length;
+        const slideContainer = document.querySelector(".slides");
+        const indicadoresContainer = document.querySelector(".indicadores");
+       
+        for (let i = 0; i < totalSlides; i++) {
+            const indicador = document.createElement("span");
+            indicador.classList.add("indicador");
+            if (i === 0) indicador.classList.add("ativo");
+            indicador.setAttribute("data-indice", i);
+            indicador.addEventListener("click", () => mostrarSlide(i));
+            indicadoresContainer.appendChild(indicador);
+        }
+       
+        function mostrarSlide(indice) {
+            if (indice >= totalSlides) {
+                indiceAtual = 0;
+            } else if (indice < 0) {
+                indiceAtual = totalSlides - 1;
+            } else {
+                indiceAtual = indice;
+            }
+            slideContainer.style.transform = `translateX(${-indiceAtual * 100}%)`;
+            document.querySelectorAll(".indicador").forEach((indicador, i) => {
+                indicador.classList.toggle("ativo", i === indiceAtual);
+            });
+        }
+       
+        document.getElementById("proximo").addEventListener("click", () => mostrarSlide(indiceAtual + 1));
+        document.getElementById("anterior").addEventListener("click", () => mostrarSlide(indiceAtual - 1));
+       
+        setInterval(() => mostrarSlide(indiceAtual + 1), 3000);
+    </script>
+    <script>
+  
+        var dados = document.getElementById("informativo");
+        alert(dados.textContent);
+
+    
+        var tag = document.getElementsByTagName("p");
+        alert(tag[1].textContent);
+
+   
+        var idSeguranca = document.getElementById("segurança");
+        alert(idSeguranca.textContent);
+
+   
+        var Selectornotifi = document.querySelectorAll(".aceito");
+        alert("Query Selector All: " + Selectornotifi[0].textContent);
+
+    
+        var selector = document.querySelector(".notificaçao");
+        alert("Query Selector: " + selector.textContent);
+    </script>
+    <script>
+
+
+        //2-) style
+		document.getElementById("livro").style.color = "red";
+		document.getElementById("racismo").style.color = "yellow";
+		document.getElementById("autora").style.color = "green";
+		document.getElementById("racismo").style.textAlign = "center";
+		document.getElementById("autora").style.textAlign = "right";
+
+       //4-) createElement / appendChild
+		var novoElemento = document.createElement("p");
+		novoElemento.textContent = "paragrafo criado";
+		novoElemento.id = "p criado";
+		document.body.appendChild(novoElemento);
+
+        //5-) removElement
+		var elementoRemover = document.getElementById("racismo");
+		elementoRemover.parentNode.removeChild(elementoRemover);
+
+        //6-) replaceChild *mudar o texto do p
+		var novoSpan = document.createElement("span");
+		novoSpan.textContent = "Span Criado";
+		var elementoAntigo = document.getElementById("p criado");
+		elementoAntigo.parentNode.replaceChild(novoSpan, elementoAntigo);
+        
+		//7-) write
+		document.write("<br/><br/><br/><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZOZjST8JCYetYLUPwBLc8_S-ViR5rb3B_A&s' width='20%'>");
+    </script>-->
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title id="p0">HISTÓRIAS INVISÍVEIS</title>
+		<link rel="stylesheet" type="text/css" href="quem_somos.css">
+        <link rel="icon" type="image/png" href="icone.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+        <style>
+          .alto-contraste{
+            background-color: black;
+            color: #fef3d6;
+        }
+        button{
+            padding:10px 15px;
+            cursor:pointer;
+            background-color:#fef3d6;
+            color:black;
+            border:1px solid #000000;
+        }
+        .modo-leitura{
+            line-height:1.8;
+            background-color:#f4f4f4;
+            color:#333;
+        }
+        .aumentar-fonte{
+            font-size:1.2em;
+        }
+        .diminuir-fonte{
+            font-size:1em;
+        }
+        :focus{
+            outline:3px solid #fef3d6;
+        }
+        </style>
+	</head>
+	<body>
+       
+    <div class="header">
+			<div class="logo">
+				<img src="logo1.png">
+			</div>
+			<div class="nav">
+				<a href="Onde_estamos.html" id="p1">Onde estamos?</a>
+				<button id="contraste-btn" aria-label="Alterar Contraste" >Alto Contraste</button>
+		        <button id="modo-leitura-btn" aria-label="Modo Leitura" >Modo Leitura</button>
+		        <button id="aumentar-fonte-btn" aria-label="Aumentar Fonte">A+</button>
+		        <button id="diminuir-fonte-btn" aria-label="Diminuir Fonte">A-</button>
+		        <button id="ler-conteudo-btn" aria-label="Ler Conteúdo">Ler Conteúdo</button>
+                <button onclick="mudarIdioma('en')">English</button>
+                <button onclick="mudarIdioma('pt')">Português</button>
+			</div>
+		</div>
+        <br/><br/><br/>
+        <h1 style="margin-left: 39%;" id="p2">QUEM SOMOS NÓS</h1>
+		<p id="p3">Somos um grupo de quatro alunos que, em uma integração do SESI com o SENAI, fizemos este trabalho a respeito do livro "Pequeno Manual Antirracista" com o objetivo de refletir e ampliar o debate sobre racismo estrutural e práticas antirracistas. Dito isso, nossos nomes são Ana Laura, Maíssa, Gabriel Moroni e Mirella e esperamos ajudar outras pessoas a entender melhor sobre o assunto.</p>
+		<br/><br/><br/><br/>
+        <div class="team-container">
+            <div class="team-row">
+                <div class="team-member">
+                    <img src="foto_moroni.png" alt="Gabriel">
+                    <div class="team-name">Gabriel</div>
+                </div>
+                <div class="team-member">
+                    <img src="foto_maissa.png" alt="Maissa">
+                    <div class="team-name">Maissa</div>
+                </div>
+                <div class="team-member">
+                    <img src="foto_mirella.png" alt="Mirella">
+                    <div class="team-name">Mirella</div>
+                </div>
+                <div class="team-member">
+                    <img src="foto_ana.png" alt="Ana">
+                    <div class="team-name">Ana</div>
+                </div>
+            </div>
+        </div>
+     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      
+
+     <div class="rodape">
+        <div class="rodape1">
+          <h3 class="sobrenos"id="p4">Sobre Nós</h3>
+          <ul class="lista_links">
+            <li>
+              <a class="lista_a" href="quem_somos.html" id="p5">
+                <i class="fa-solid fa-user"></i> Quem Somos
+              </a>
+            </li>
+            <li>
+              <a class="lista_a" href="contato.html" id="p6">
+                <i class="fa-solid fa-phone"></i> Contato
+              </a>
+            </li>
+            <li>
+                <a class="lista_a" href="manual.html" id="p">
+                  <i class="fa-solid fa-house"></i> Página inicial
+                </a>
+              </li>
+          </ul>
+        </div>
+      </div>
+   
+      <script>
+        //alterar o contraste
+        document.getElementById('contraste-btn').addEventListener('click', function(){document.body.classList.toggle('alto-contraste')});
+    
+        //Modo leitura
+        document.getElementById('modo-leitura-btn').addEventListener('click', function(){document.body.classList.toggle('modo-leitura')});
+        
+        //Aumentar fonte
+        document.getElementById('aumentar-fonte-btn').addEventListener('click', function()
+        {document.body.classList.add('aumentar-fonte');
+        document.body.classList.remove('diminuir-fonte');
+        });
+        
+        //diminuir fonte
+        document.getElementById('diminuir-fonte-btn').addEventListener('click', function()
+        {document.body.classList.add('diminuir-fonte');
+        document.body.classList.remove('aumentar-fonte');
+        });
+        
+        //teclado virtual
+        function addKey(letra){
+            document.getElementById('resultado').innerText += letra;
+        };
+        
+        //ler conteudo da pagina
+        document.getElementById('ler-conteudo-btn').addEventListener('click', function(){
+            const texto = document.body.innerText;
+            const falante = new SpeechSynthesisUtterance(texto);
+            falante.lang = 'pt-BR';
+            falante.volume = 1;
+            falante.rate = 4;
+            falante.pitch = 1;
+            speechSynthesis.speak(falante);
+        });
+    
+    </script>
+
+	</body>    
+    <script>
+        const traducoes = {
+			"pt":{
+                "p0":"HISTÓRIAS INVISÍVEIS",
+                "p1":"Onde estamos?",
+                "contraste-btn":"Alto Contraste",
+                "modo-leitura-btn":"Modo Leitura",
+                "ler-conteudo-btn":"Ler Conteúdo",
+                "p2":"QUEM SOMOS NÓS",
+                "p3":"Somos um grupo de quatro alunos que, em uma integração do SESI com o SENAI, fizemos este trabalho a respeito do livro 'Pequeno Manual Antirracista' com o objetivo de refletir e ampliar o debate sobre racismo estrutural e práticas antirracistas. Dito isso, nossos nomes são Ana Laura, Maíssa, Gabriel Moroni e Mirella e esperamos ajudar outras pessoas a entender melhor sobre o assunto.",
+                "p4":"Sobre Nós",
+                "p5":"Quem Somos",
+                "p6":"Contato",
+                "p7":"Página inicial",
+            },
+           "en": {
+            "p0": "INVISIBLE STORIES",
+            "p1": "Where are we?",
+            "contraste-btn": "High Contrast",
+            "modo-leitura-btn": "Reading Mode",
+            "ler-conteudo-btn": "Read Content",
+            "p2": "WHO WE ARE",
+            "p3": "We are a group of four students who, through a partnership between SESI and SENAI, created this project about the book 'Pequeno Manual Antirracista' (A Short Anti-Racist Guide) with the goal of reflecting on and expanding the debate around structural racism and anti-racist practices. That said, our names are Ana Laura, Maíssa, Gabriel Moroni, and Mirella, and we hope to help others better understand this topic.",
+            "p4": "About Us",
+            "p5": "Who We Are",
+            "p6": "Contact",
+            "p7": "Home Page"
+            }
+
+        }
+        function mudarIdioma(idioma) {
+            document.getElementById("p0").innerText = traducoes[idioma].p0;
+            document.getElementById("p1").innerText = traducoes[idioma].p1;
+            document.getElementById("contraste-btn").innerText = traducoes[idioma]["contraste-btn"];
+            document.getElementById("modo-leitura-btn").innerText = traducoes[idioma]["modo-leitura-btn"];
+            document.getElementById("ler-conteudo-btn").innerText = traducoes[idioma]["ler-conteudo-btn"];
+            document.getElementById("p2").innerText = traducoes[idioma].p2;
+            document.getElementById("p3").innerText = traducoes[idioma].p3;
+            document.getElementById("p4").innerText = traducoes[idioma].p4;
+            document.getElementById("p5").innerText = traducoes[idioma].p5;
+            document.getElementById("p6").innerText = traducoes[idioma].p6;
+            document.getElementById("p7").innerText = traducoes[idioma].p7;
+        }
+
+    </script>
+   
+  
+</html>

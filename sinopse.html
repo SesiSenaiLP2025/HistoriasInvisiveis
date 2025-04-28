@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>HISTÓRIAS INVISÍVEIS</title>
+		<link rel="stylesheet" type="text/css" href="sinopse.css">
+        <link rel="icon" type="image/png" href="icone.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+        <style>
+          .alto-contraste{
+            background-color: black;
+            color: #fef3d6;
+        }
+        button{
+            padding:10px 15px;
+            cursor:pointer;
+            background-color:#fef3d6;
+            color:black;
+            border:1px solid #000000;
+        }
+        .modo-leitura{
+            line-height:1.8;
+            background-color:#f4f4f4;
+            color:#333;
+        }
+        .aumentar-fonte{
+            font-size:1.2em;
+        }
+        .diminuir-fonte{
+            font-size:1em;
+        }
+        :focus{
+            outline:3px solid #fef3d6;
+        }
+        </style>
+	</head>
+	<body>
+
+    
+
+    <div class="header">
+			<div class="logo">
+				<img src="logo1.png">
+			</div>
+			<div class="nav">
+				<a href="Onde_estamos.html" id="p1">Onde estamos??</a>
+				<button id="contraste-btn" aria-label="Alterar Contraste">Alto Contraste</button>
+		        <button id="modo-leitura-btn" aria-label="Modo Leitura">Modo Leitura</button>
+		        <button id="aumentar-fonte-btn" aria-label="Aumentar Fonte">A+</button>
+		        <button id="diminuir-fonte-btn" aria-label="Diminuir Fonte">A-</button>
+		        <button id="ler-conteudo-btn" aria-label="Ler Conteúdo">Ler Conteúdo</button>
+            <button onclick="mudarIdioma('en')">English</button>
+            <button onclick="mudarIdioma('pt')">Português</button>
+			</div>
+		</div>
+
+		
+		</main><br/><br/><br/>
+        <div class="fotos" ><br/><br/><br/>
+            <img src="foto1.jpg"  style="width: 20%;">
+            <img src="foto3.jpg" style="width: 20%;">
+            <img src="foto2.webp"  style="width: 20%;">
+        </div>
+        <div><br/><br/><br/><br/><br/><br/>
+        <h1 class="sinopse" id="p7">SINOPSE PEQUENO MANUAL ANTIRRACISTA</h1>
+        </div>
+        <div>
+        <p id="p8">Neste pequeno manual, a filósofa e ativista Djamila Ribeiro trata de temas como atualidade do racismo, negritude, branquitude, violência racial, cultura, desejos e afetos. Em onze capítulos curtos e contundentes, a autora apresenta caminhos de reflexão para aqueles que queiram aprofundar sua percepção sobre discriminações racistas estruturais e assumir a responsabilidade pela transformação do estado das coisas. Já há muitos anos se solidifica a percepção de que o racismo está arraigado em nossa sociedade, criando desigualdades e abismos sociais: trata-se de um sistema de opressão que nega direitos, e não um simples ato de vontade de um sujeito. Reconhecer as raízes e o impacto do racismo pode ser paralisante. Afinal, como enfrentar um monstro desse tamanho? Djamila Ribeiro argumenta que a prática antirracista é urgente e se dá nas atitudes mais cotidianas. E mais ainda: é uma luta de todas e todos.</p>
+        </div>
+     
+        <div class="rodape">
+            <div class="rodape1">
+              <h3 class="sobrenos" id="p9">Sobre Nós</h3>
+              <ul class="lista_links">
+                <li>
+                  <a class="lista_a" href="quem_somos.html">
+                    <i class="fa-solid fa-user"></i> Quem Somos
+                  </a>
+                </li>
+                <li>
+                  <a class="lista_a" href="contato.html">
+                    <i class="fa-solid fa-phone"></i> Contato
+                  </a>
+                </li>
+                <li>
+                    <a class="lista_a" href="manual.html">
+                      <i class="fa-solid fa-house"></i> Página Inicial
+                    </a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+   
+      <script>
+        //alterar o contraste
+        document.getElementById('contraste-btn').addEventListener('click', function(){document.body.classList.toggle('alto-contraste')});
+    
+        //Modo leitura
+        document.getElementById('modo-leitura-btn').addEventListener('click', function(){document.body.classList.toggle('modo-leitura')});
+        
+        //Aumentar fonte
+        document.getElementById('aumentar-fonte-btn').addEventListener('click', function()
+        {document.body.classList.add('aumentar-fonte');
+        document.body.classList.remove('diminuir-fonte');
+        });
+        
+        //diminuir fonte
+        document.getElementById('diminuir-fonte-btn').addEventListener('click', function()
+        {document.body.classList.add('diminuir-fonte');
+        document.body.classList.remove('aumentar-fonte');
+        });
+        
+        //teclado virtual
+        function addKey(letra){
+            document.getElementById('resultado').innerText += letra;
+        };
+        
+        //ler conteudo da pagina
+        document.getElementById('ler-conteudo-btn').addEventListener('click', function(){
+            const texto = document.body.innerText;
+            const falante = new SpeechSynthesisUtterance(texto);
+            falante.lang = 'pt-BR';
+            falante.volume = 1;
+            falante.rate = 4;
+            falante.pitch = 1;
+            speechSynthesis.speak(falante);
+        });
+    
+    </script>
+
+	</body>    
+  <script>
+    const traducoes = {
+        "pt":   {
+            "p1": "Onde estamos??",
+            "p2": "Alto Contraste",
+            "p3": "Modo Leitura",
+            "p4": "A+",
+            "p5": "A-",
+            "p6": "Ler Conteúdo",
+            "p7": "SINOPSE PEQUENO MANUAL ANTIRRACISTA",
+            "p8": "Neste pequeno manual, a filósofa e ativista Djamila Ribeiro trata de temas como atualidade do racismo, negritude, branquitude, violência racial, cultura, desejos e afetos. Em onze capítulos curtos e contundentes, a autora apresenta caminhos de reflexão para aqueles que queiram aprofundar sua percepção sobre discriminações racistas estruturais e assumir a responsabilidade pela transformação do estado das coisas. Já há muitos anos se solidifica a percepção de que o racismo está arraigado em nossa sociedade, criando desigualdades e abismos sociais: trata-se de um sistema de opressão que nega direitos, e não um simples ato de vontade de um sujeito. Reconhecer as raízes e o impacto do racismo pode ser paralisante. Afinal, como enfrentar um monstro desse tamanho? Djamila Ribeiro argumenta que a prática antirracista é urgente e se dá nas atitudes mais cotidianas. E mais ainda: é uma luta de todas e todos.",
+            "p9": "Sobre Nós",
+            "p10": " Quem Somos",
+            "p11": "Contato",
+            "p12": "Página Inicial",
+            
+        },
+        "en":   {
+            "p1": "Where are we??",
+            "p2": "High Contrast",
+            "p3": "Reading Mode",
+            "p4": "A+",
+            "p5": "A-",
+            "p6": "Read Content",
+            "p7": "SMALL ANTI-RACIST MANUAL SYNOPSIS",
+            "p8": "In this short manual, philosopher and activist Djamila Ribeiro addresses topics such as the current state of racism, blackness, whiteness, racial violence, culture, desires and affections. In eleven short and compelling chapters, the author presents paths of reflection for those who want to deepen their perception of structural racist discrimination and take responsibility for transforming the state of things. For many years now, the perception has been solidified that racism is rooted in our society, creating inequalities and social chasms: it is a system of oppression that denies rights, and not a simple act of will by an individual. Recognizing the roots and impact of racism can be paralyzing. After all, how can we confront a monster of this size? Djamila Ribeiro argues that anti-racist practice is urgent and takes place in the most everyday attitudes. And what's more: it is a fight for everyone.",
+            "p9": "About Us",
+            "p10": "Who We Are",
+            "p11": "Contact",
+            "p12": "Home Page",
+        }
+    }
+
+    function mudarIdioma(idioma){
+        document.getElementById("p1").innerText = traducoes[idioma].p1;
+        document.getElementById("p7").innerText = traducoes[idioma].p7;
+        document.getElementById("p8").innerText = traducoes[idioma].p8;
+        document.getElementById("p9").innerText = traducoes[idioma].p9;
+    }
+</script>
+   
+  
+</html>

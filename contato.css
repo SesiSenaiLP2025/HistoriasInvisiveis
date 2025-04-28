@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fef3d6;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #6f340d;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 41px;
+    margin-right: 10px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.contato-section {
+    background-color: #6f340d;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contato-section h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.btn-pedir {
+    background-color: white;
+    color: #6f340d;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    right: 40px;
+    top: 30px;
+}
+
+.meios-contato {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    background-color: #fef3d6;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contato-item {
+    max-width: 250px;
+}
+
+.contato-item i {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.contato-item h2 {
+    color: #6f340d;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contato-item p {
+    margin: 5px 0;
+    color: #444;
+}
+
+.contato-item strong {
+    display: block;
+    margin-top: 10px;
+    color: black;
+}
+
+.rodape {
+    background-color: #5c2e0e; /* marrom escuro */
+    color: #fff;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .rodape1 {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .sobrenos {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .lista_links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .lista_links li {
+    margin-bottom: 10px;
+  }
+  
+  .lista_a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .lista_a:hover {
+    color: #ffcc00; /* amarelo no hover */
+  }
+.lista_a{
+    text-decoration: none;
+}
